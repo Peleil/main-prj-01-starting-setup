@@ -2,6 +2,11 @@ import { createStore } from 'vuex';
 
 import coachesModule from './modules/coaches/index.js';
 import requestsModule from './modules/requests/index.js';
+import VuexPersistence from 'vuex-persist';
+
+const vuexLocal = new VuexPersistence({
+  storage: window.localStorage,
+});
 
 const store = createStore({
   modules: {
@@ -18,6 +23,8 @@ const store = createStore({
       return state.userId;
     },
   },
+
+  plugins: [vuexLocal.plugin],
 });
 
 export default store;
