@@ -43,6 +43,7 @@ export default {
 
     for (const key in responseData) {
       const coach = {
+        id: key,
         firstName: responseData[key].firstName,
         lastName: responseData[key].lastName,
         description: responseData[key].description,
@@ -51,7 +52,6 @@ export default {
       };
       coaches.push(coach);
     }
-
     context.commit('setCoaches', coaches);
   },
 };
