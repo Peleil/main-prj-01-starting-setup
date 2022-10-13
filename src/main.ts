@@ -22,4 +22,4 @@ app.component('base-dialog', BaseDialog);
 
 app.mount('#app');
 
-// i dont understand git
+// i dont understand github desktop
